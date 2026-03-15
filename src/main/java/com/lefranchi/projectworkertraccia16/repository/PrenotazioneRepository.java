@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Long> {
-    // --- NUOVE QUERY PER LA DASHBOARD CON FILTRO TEMPORALE ---
+    // --- QUERY PER LA DASHBOARD CON FILTRO TEMPORALE ---
     @Query("SELECT COALESCE(SUM(p.prezzoFinale), 0) FROM Prenotazione p WHERE p.stato = 'COMPLETATA' AND p.dataOra >= :inizio AND p.dataOra <= :fine")
     Double calcolaIncassoTotaleByDate(@Param("inizio") LocalDateTime inizio, @Param("fine") LocalDateTime fine);
 
@@ -35,7 +35,6 @@ public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Long
     @Query("SELECT COUNT(p) FROM Prenotazione p WHERE p.stato = 'DA_REFERTARE'")
     Long contaVisiteInSospeso();
 
-    // Aggiungi questo metodo nel tuo PrenotazioneRepository
     @Query("SELECT COUNT(p) FROM Prenotazione p WHERE p.sede.id = :sedeId AND p.prestazione.id = :prestazioneId AND p.medico.id = :medicoId AND p.dataOra = :dataOra AND p.id != :prenotazioneId")
     Long contaConflittiModifica(Long sedeId, Long prestazioneId, Long medicoId, java.time.LocalDateTime dataOra, Long prenotazioneId);
 }

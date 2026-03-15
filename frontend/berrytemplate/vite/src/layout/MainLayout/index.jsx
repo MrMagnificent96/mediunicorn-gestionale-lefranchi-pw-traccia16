@@ -33,7 +33,7 @@ export default function MainLayout() {
   useEffect(() => {
     const utente = localStorage.getItem('utenteMediunicorn');
     if (!utente) {
-      // Se non c'è traccia dell'utente, lo cacciamo alla pagina di login
+      // Se non c'è traccia dell'utente, lo inoltro alla pagina di login
       navigate('/login');
     }
   }, [navigate]);

@@ -22,7 +22,7 @@ public class FinanzeController {
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate da,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate a) {
 
-        // Se le date non arrivano, usiamo un range "tutto il tempo"
+        // Se le date non arrivano, usiamo un range "tampone"
         LocalDateTime inizio = (da != null) ? da.atStartOfDay() : LocalDateTime.of(2000, 1, 1, 0, 0);
         LocalDateTime fine = (a != null) ? a.atTime(23, 59, 59) : LocalDateTime.of(2099, 12, 31, 23, 59);
 

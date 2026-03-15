@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/medici")
-@CrossOrigin(origins = "http://localhost:3000") // Permette a React di leggere i dati
+@CrossOrigin(origins = "http://localhost:3000")
 public class MedicoController {
 
     @Autowired

@@ -22,7 +22,7 @@ public class Prenotazione {
     @Column(nullable = false)
     private Double prezzoFinale; // Prezzo prestazione + 2€ marca da bollo
 
-    // Relazioni (Creeremo questi Model nel prossimo step)
+    // Relazioni
     @ManyToOne
     @JoinColumn(name = "sede_id", nullable = false)
     private Sede sede;

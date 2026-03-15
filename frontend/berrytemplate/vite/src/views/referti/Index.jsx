@@ -7,7 +7,6 @@ const Referti = () => {
     const [loading, setLoading] = useState(true);
 
     const [formData, setFormData] = useState({ prenotazioneId: '', testoDiagnosi: '' });
-    // NUOVO STATO: array di file selezionati
     const [selectedFiles, setSelectedFiles] = useState([]);
 
     const [isSubmitted, setIsSubmitted] = useState(false);

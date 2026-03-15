@@ -68,7 +68,7 @@ public class RefertoController {
 
     // --- LETTURA DEL REFERTO (Con Transazione per Postgres) ---
     @GetMapping("/prenotazione/{prenotazioneId}")
-    @Transactional(readOnly = true) // <-- IL FIX! Permette di leggere i LOB in sicurezza
+    @Transactional(readOnly = true) // <-- Permette di leggere i LOB in sicurezza
     public org.springframework.http.ResponseEntity<?> getRefertoVisualizzazione(@PathVariable Long prenotazioneId) {
         Referto referto = refertoRepository.findByPrenotazioneId(prenotazioneId)
                 .orElseThrow(() -> new RuntimeException("Referto non trovato per questa visita"));
@@ -95,7 +95,7 @@ public class RefertoController {
 
     // --- DOWNLOAD DEL SINGOLO ALLEGATO (Con Transazione per Postgres) ---
     @GetMapping("/allegato/{id}")
-    @Transactional(readOnly = true) // <-- IL FIX! Fondamentale per scaricare i byte[]
+    @Transactional(readOnly = true) // <-- Fondamentale per scaricare i byte[]
     public org.springframework.http.ResponseEntity<byte[]> downloadAllegato(@PathVariable Long id) {
         Allegato allegato = allegatoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Allegato non trovato"));

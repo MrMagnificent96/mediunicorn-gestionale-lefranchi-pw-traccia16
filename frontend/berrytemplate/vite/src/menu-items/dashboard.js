@@ -12,7 +12,7 @@ const clinica = {
       id: 'dashboard-economica',
       title: 'Dashboard Economica',
       type: 'item',
-      url: '/dashboard/default', // Lasciamo la dashboard di default per ora
+      url: '/dashboard/default',
       icon: icons.IconDashboard,
       breadcrumbs: false
     },
@@ -20,7 +20,7 @@ const clinica = {
       id: 'gestione-prenotazioni',
       title: 'Nuova Prenotazione',
       type: 'item',
-      url: '/prenotazioni', // Creeremo questa pagina a breve
+      url: '/prenotazioni',
       icon: icons.IconCalendarEvent,
       breadcrumbs: false
     },
@@ -36,7 +36,7 @@ const clinica = {
       id: 'archivio-referti',
       title: 'Registrazione Referti',
       type: 'item',
-      url: '/referti', // Creeremo questa pagina a breve
+      url: '/referti',
       icon: icons.IconFileReport,
       breadcrumbs: false
     }
